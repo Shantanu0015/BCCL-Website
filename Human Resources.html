@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Human Resources | BCCL</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .hr-banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+.hr-banner-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: fadeInHRBanner 1.2s 0.2s forwards;
+}
+@keyframes fadeInHRBanner {
+    from { opacity: 0; transform: scale(1.05);}
+    to { opacity: 1; transform: scale(1);}
+}
+.hr-banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translate(-50%, -70%);}
+    to { opacity: 1; transform: translate(-50%, -50%);}
+}
+        .hr-header {
+            text-align: center;
+            color: #0036e6;
+            margin-top: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeSlideDown 1.2s 0.2s forwards;
+        }
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .hr-img-center {
+            display: block;
+            margin: 32px auto 24px auto;
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            opacity: 0;
+            animation: fadeInHR 1.2s 0.7s forwards;
+        }
+        .hr-flex-section {
+            max-width: 950px;
+            margin: 0 auto 40px auto;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+            opacity: 0;
+            animation: fadeInHR 1.2s 0.9s forwards;
+        }
+        @keyframes fadeInHR {
+            from { opacity: 0; transform: scale(0.97);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .hr-section-title {
+            font-size: 1.3rem;
+            color: #0036e6;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .hr-text {
+            font-size: 1.1rem;
+            color: #222;
+            text-align: left;
+        }
+        .hr-list {
+            margin: 18px 0 0 0;
+            padding-left: 18px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .hr-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .hr-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #fff;
+        }
+        .hr-table th, .hr-table td {
+            border: 1px solid #c3d0e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .hr-table th {
+            background: #e6f0ff;
+            color: #0036e6;
+        }
+        @media (max-width: 800px) {
+            .hr-img-center {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+            }
+            .hr-flex-section {
+                padding: 18px 8px 12px 8px;
+            }
+            .hr-table th, .hr-table td {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="hr-banner-container">
+    <img src="hr image.jpg" alt="Human Resources at BCCL" class="hr-banner-img">
+    <div class="hr-banner-title">Human Resources at BCCL</div>
+</div>
+    <div class="hr-flex-section">
+        <div class="hr-section-title">HR Overview</div>
+        <p class="hr-text">
+            The Human Resources (HR) department at Bharat Coking Coal Limited (BCCL) is dedicated to the recruitment, development, and welfare of its employees. BCCL values its workforce as its greatest asset and strives to create a safe, inclusive, and growth-oriented environment. The company is committed to fair employment practices, employee engagement, and continuous improvement in HR policies.
+        </p>
+
+        <div class="hr-section-title">HR Policies & Initiatives</div>
+        <ul class="hr-list">
+            <li><strong>Recruitment & Training:</strong> Transparent recruitment process and regular training programs for skill enhancement and safety awareness.</li>
+            <li><strong>Employee Welfare:</strong> Comprehensive welfare schemes, healthcare, housing, and recreational facilities for employees and their families.</li>
+            <li><strong>Skill Development:</strong> Workshops, seminars, and technical training to keep the workforce updated with the latest industry practices.</li>
+            <li><strong>Performance Management:</strong> Structured appraisal systems and incentives for outstanding performance.</li>
+            <li><strong>Diversity & Inclusion:</strong> Promoting equal opportunities and a respectful work culture for all employees.</li>
+            <li><strong>Employee Engagement:</strong> Sports, cultural, and community activities to foster team spirit and motivation.</li>
+        </ul>
+
+        <div class="hr-section-title">Welfare & Social Security</div>
+        <ul class="hr-list">
+            <li>Medical facilities through hospitals and dispensaries.</li>
+            <li>Housing colonies and educational institutions for employees’ children.</li>
+            <li>Insurance and pension schemes for financial security.</li>
+            <li>Support for dependents of employees in case of accidents or fatalities.</li>
+        </ul>
+
+        <div class="hr-section-title">Training & Development</div>
+        <ul class="hr-list">
+            <li>In-house training centers for technical and managerial skills.</li>
+            <li>Safety training and mock drills for accident prevention.</li>
+            <li>Leadership development programs for future managers.</li>
+            <li>Collaboration with reputed institutes for advanced learning.</li>
+        </ul>
+
+        <div class="hr-section-title">Safety & Health</div>
+        <ul class="hr-list">
+            <li>Strict adherence to safety protocols and health standards.</li>
+            <li>Regular health check-ups and wellness programs.</li>
+            <li>Awareness campaigns on occupational health and hygiene.</li>
+        </ul>
+
+        <div class="hr-section-title">Key HR Statistics (Sample)</div>
+        <table class="hr-table">
+            <tr>
+                <th>Parameter</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Total Employees</td>
+                <td>~40,000</td>
+            </tr>
+            <tr>
+                <td>Training Centers</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Medical Facilities</td>
+                <td>10 Hospitals, 50 Dispensaries</td>
+            </tr>
+            <tr>
+                <td>Employee Welfare Schemes</td>
+                <td>Multiple (housing, insurance, education, etc.)</td>
+            </tr>
+        </table>
+
+        <div class="hr-section-title">HR Highlights</div>
+        <ul class="hr-list">
+            <li><strong>Transparent HR Practices:</strong> Ensuring fairness and equal opportunity in all HR processes.</li>
+            <li><strong>Continuous Improvement:</strong> Regular review and upgradation of HR policies.</li>
+            <li><strong>Employee Recognition:</strong> Awards and incentives for outstanding contributions.</li>
+            <li><strong>Community Engagement:</strong> Active participation in local community development and welfare.</li>
+        </ul>
+        <p class="hr-text" style="margin-top:24px;">
+            Through its HR initiatives, BCCL aims to empower its employees, nurture leadership, and build a motivated team committed to the company’s mission and vision.
+        </p>
+    </div>
+</body>
+</html>

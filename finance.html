@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance | BCCL</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .finance-banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+.finance-banner-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: fadeInFinanceBanner 1.2s 0.2s forwards;
+}
+@keyframes fadeInFinanceBanner {
+    from { opacity: 0; transform: scale(1.05);}
+    to { opacity: 1; transform: scale(1);}
+}
+.finance-banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translate(-50%, -70%);}
+    to { opacity: 1; transform: translate(-50%, -50%);}
+}
+        .finance-header {
+            text-align: center;
+            color: #0036e6;
+            margin-top: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeSlideDown 1.2s 0.2s forwards;
+        }
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .finance-img-center {
+            display: block;
+            margin: 32px auto 24px auto;
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            opacity: 0;
+            animation: fadeInFinance 1.2s 0.7s forwards;
+        }
+        .finance-flex-section {
+            max-width: 950px;
+            margin: 0 auto 40px auto;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+            opacity: 0;
+            animation: fadeInFinance 1.2s 0.9s forwards;
+        }
+        @keyframes fadeInFinance {
+            from { opacity: 0; transform: scale(0.97);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .finance-section-title {
+            font-size: 1.3rem;
+            color: #0036e6;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .finance-text {
+            font-size: 1.1rem;
+            color: #222;
+            text-align: left;
+        }
+        .finance-list {
+            margin: 18px 0 0 0;
+            padding-left: 18px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .finance-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .finance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #fff;
+        }
+        .finance-table th, .finance-table td {
+            border: 1px solid #c3d0e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .finance-table th {
+            background: #e6f0ff;
+            color: #0036e6;
+        }
+        @media (max-width: 800px) {
+            .finance-img-center {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+            }
+            .finance-flex-section {
+                padding: 18px 8px 12px 8px;
+            }
+            .finance-table th, .finance-table td {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="finance-banner-container">
+    <img src="finance image44.jpg" alt="Finance at BCCL" class="finance-banner-img">
+    <div class="finance-banner-title">Finance at BCCL</div>
+</div>
+    <div class="finance-flex-section">
+        <div class="finance-section-title">Finance Overview</div>
+        <p class="finance-text">
+            The Finance department at Bharat Coking Coal Limited (BCCL) is responsible for managing the company’s financial planning, budgeting, and reporting. It ensures the financial health of the organization and supports strategic decision-making for sustainable growth and value creation.
+        </p>
+
+        <div class="finance-section-title">Financial Management & Planning</div>
+        <ul class="finance-list">
+            <li><strong>Budgeting:</strong> Preparation of annual budgets and monitoring of expenditures for optimal resource allocation.</li>
+            <li><strong>Financial Planning:</strong> Long-term financial strategies to support business expansion and modernization.</li>
+            <li><strong>Cost Control:</strong> Implementation of cost reduction measures and efficiency improvements.</li>
+            <li><strong>Investment Management:</strong> Evaluation and execution of capital investment projects.</li>
+        </ul>
+
+        <div class="finance-section-title">Revenue & Sales</div>
+        <ul class="finance-list">
+            <li>Revenue generation through coal sales to steel plants, power utilities, and other industries.</li>
+            <li>Transparent e-auction platforms for coal sales.</li>
+            <li>Efficient billing and collection systems to ensure timely revenue realization.</li>
+        </ul>
+
+        <div class="finance-section-title">Audit & Compliance</div>
+        <ul class="finance-list">
+            <li>Regular internal and external audits to ensure transparency and accountability.</li>
+            <li>Compliance with statutory regulations, tax laws, and corporate governance standards.</li>
+            <li>Implementation of financial controls to prevent fraud and errors.</li>
+        </ul>
+
+        <div class="finance-section-title">Digital Initiatives</div>
+        <ul class="finance-list">
+            <li>Adoption of ERP and IT solutions for real-time financial monitoring and reporting.</li>
+            <li>Online payment and e-procurement systems for efficiency and transparency.</li>
+        </ul>
+
+        <div class="finance-section-title">Corporate Social Responsibility (CSR)</div>
+        <ul class="finance-list">
+            <li>Allocation of funds for community development, healthcare, education, and environmental sustainability.</li>
+            <li>Transparent reporting of CSR expenditures and outcomes.</li>
+        </ul>
+
+        <div class="finance-section-title">Key Financial Statistics (Sample)</div>
+        <table class="finance-table">
+            <tr>
+                <th>Parameter</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Annual Revenue</td>
+                <td>₹8,000+ Crore</td>
+            </tr>
+            <tr>
+                <td>Net Profit (Annual)</td>
+                <td>₹500+ Crore</td>
+            </tr>
+            <tr>
+                <td>CSR Expenditure (Annual)</td>
+                <td>₹30+ Crore</td>
+            </tr>
+            <tr>
+                <td>Capital Investment (Annual)</td>
+                <td>₹400+ Crore</td>
+            </tr>
+        </table>
+
+        <div class="finance-section-title">Finance Highlights</div>
+        <ul class="finance-list">
+            <li><strong>Prudent Financial Management:</strong> Ensuring operational excellence and financial stability.</li>
+            <li><strong>Transparency:</strong> Adherence to best practices in accounting and disclosure.</li>
+            <li><strong>Support for Growth:</strong> Financial backing for expansion, modernization, and sustainability projects.</li>
+            <li><strong>Stakeholder Value:</strong> Maximizing value for shareholders, employees, and the community.</li>
+        </ul>
+
+        <p class="finance-text" style="margin-top:24px;">
+            Through prudent financial management and a commitment to transparency, BCCL continues to support the company’s mission and contribute to the nation’s economic development.
+        </p>
+    </div>
+</body>

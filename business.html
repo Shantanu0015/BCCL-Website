@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business | BCCL</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Add to your existing <style> section */
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+        .business-header {
+            text-align: center;
+            color: #0036e6;
+            margin-top: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeSlideDown 1.2s 0.2s forwards;
+        }
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .business-img-center {
+            display: block;
+            margin: 32px auto 24px auto;
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            opacity: 0;
+            animation: fadeInBusiness 1.2s 0.7s forwards;
+        }
+        .business-flex-section {
+            max-width: 950px;
+            margin: 0 auto 40px auto;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+            opacity: 0;
+            animation: fadeInBusiness 1.2s 0.9s forwards;
+        }
+        @keyframes fadeInBusiness {
+            from { opacity: 0; transform: scale(0.97);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .business-section-title {
+            font-size: 1.3rem;
+            color: #0036e6;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .business-text {
+            font-size: 1.1rem;
+            color: #222;
+            text-align: left;
+        }
+        .business-list {
+            margin: 18px 0 0 0;
+            padding-left: 18px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .business-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .business-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #fff;
+        }
+        .business-table th, .business-table td {
+            border: 1px solid #c3d0e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .business-table th {
+            background: #e6f0ff;
+            color: #0036e6;
+        }
+        @media (max-width: 800px) {
+            .business-img-center {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+            }
+            .business-flex-section {
+                padding: 18px 8px 12px 8px;
+            }
+            .business-table th, .business-table td {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+    <img class="banner-animate" width="100%" height="300px" src="business handshake.webp" alt="">
+    <div class="banner-title">Business of BCCL</div>
+</div>
+    <div class="business-flex-section">
+        <div class="business-section-title">Company Overview</div>
+        <p class="business-text">
+            Bharat Coking Coal Limited (BCCL), a subsidiary of Coal India Limited, is the major producer of prime coking coal in India. Established in 1972, BCCL operates 36 coal mines in the Jharia and Raniganj coalfields, which are the only sources of prime coking coal in the country. The company is committed to supplying high-quality coal to the steel sector and other core industries, supporting the nation's industrial growth.
+        </p>
+
+        <div class="business-section-title">Products & Services</div>
+        <ul class="business-list">
+            <li><strong>Prime Coking Coal:</strong> Used primarily in steel manufacturing.</li>
+            <li><strong>Medium Coking Coal:</strong> Supplied to various metallurgical industries.</li>
+            <li><strong>Washed Coal:</strong> Processed in washeries for improved quality and reduced ash content.</li>
+            <li><strong>By-products:</strong> Includes coal tar, ammonium sulphate, and other chemicals from coal processing.</li>
+            <li><strong>Coal Beneficiation:</strong> Upgradation of coal quality through advanced beneficiation plants.</li>
+        </ul>
+
+        <div class="business-section-title">Major Customers</div>
+        <ul class="business-list">
+            <li>Integrated Steel Plants (SAIL, RINL, Tata Steel, etc.)</li>
+            <li>Power Utilities</li>
+            <li>Cement and Fertilizer Industries</li>
+            <li>Other core sector industries</li>
+        </ul>
+
+        <div class="business-section-title">Marketing & Distribution</div>
+        <p class="business-text">
+            BCCL has a robust marketing and distribution network, ensuring timely supply of coal to customers across India. The company uses rail, road, and conveyor systems for efficient coal dispatch. E-auction platforms are also used for transparent and competitive coal sales.
+        </p>
+
+        <div class="business-section-title">Sustainability & CSR</div>
+        <ul class="business-list">
+            <li><strong>Environmental Initiatives:</strong> Land reclamation, afforestation, and pollution control measures.</li>
+            <li><strong>Community Development:</strong> Healthcare, education, and infrastructure projects for local communities.</li>
+            <li><strong>Safety:</strong> Implementation of best practices and regular training to maintain a safe working environment.</li>
+            <li><strong>Innovation:</strong> Adoption of new technologies and automation for improved productivity and resource management.</li>
+        </ul>
+
+        <div class="business-section-title">Key Statistics (Sample)</div>
+        <table class="business-table">
+            <tr>
+                <th>Parameter</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Number of Mines</td>
+                <td>36 (including underground and open-cast)</td>
+            </tr>
+            <tr>
+                <td>Annual Coal Production</td>
+                <td>~30 Million Tonnes</td>
+            </tr>
+            <tr>
+                <td>Number of Washeries</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Employees</td>
+                <td>~40,000</td>
+            </tr>
+        </table>
+
+        <div class="business-section-title">Business Highlights</div>
+        <ul class="business-list">
+            <li><strong>Largest Producer:</strong> BCCL is one of the largest producers of coking coal in India, contributing significantly to the nation’s steel industry.</li>
+            <li><strong>Strategic Location:</strong> Mines are strategically located in the heart of India’s industrial belt, ensuring efficient supply chains.</li>
+            <li><strong>Export Potential:</strong> Exploring opportunities to export high-quality coking coal to international markets.</li>
+            <li><strong>Joint Ventures:</strong> Collaborating with national and international partners for technology transfer and business growth.</li>
+        </ul>
+        <p class="business-text" style="margin-top:24px;">
+            BCCL continues to innovate and expand its business operations, focusing on sustainable growth, technological advancement, and value creation for all stakeholders. The company’s commitment to excellence ensures its position as a trusted partner in India’s industrial progress.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vigilance | BCCL</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .vigilance-banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+.vigilance-banner-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: fadeInVigilanceBanner 1.2s 0.2s forwards;
+}
+@keyframes fadeInVigilanceBanner {
+    from { opacity: 0; transform: scale(1.05);}
+    to { opacity: 1; transform: scale(1);}
+}
+.vigilance-banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translate(-50%, -70%);}
+    to { opacity: 1; transform: translate(-50%, -50%);}
+}
+        .vigilance-header {
+            text-align: center;
+            color: #0036e6;
+            margin-top: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeSlideDown 1.2s 0.2s forwards;
+        }
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .vigilance-img-center {
+            display: block;
+            margin: 32px auto 24px auto;
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            opacity: 0;
+            animation: fadeInVigilance 1.2s 0.7s forwards;
+        }
+        .vigilance-flex-section {
+            max-width: 950px;
+            margin: 0 auto 40px auto;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+            opacity: 0;
+            animation: fadeInVigilance 1.2s 0.9s forwards;
+        }
+        @keyframes fadeInVigilance {
+            from { opacity: 0; transform: scale(0.97);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .vigilance-section-title {
+            font-size: 1.3rem;
+            color: #0036e6;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .vigilance-text {
+            font-size: 1.1rem;
+            color: #222;
+            text-align: left;
+        }
+        .vigilance-list {
+            margin: 18px 0 0 0;
+            padding-left: 18px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .vigilance-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .vigilance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #fff;
+        }
+        .vigilance-table th, .vigilance-table td {
+            border: 1px solid #c3d0e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .vigilance-table th {
+            background: #e6f0ff;
+            color: #0036e6;
+        }
+        @media (max-width: 800px) {
+            .vigilance-img-center {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+            }
+            .vigilance-flex-section {
+                padding: 18px 8px 12px 8px;
+            }
+            .vigilance-table th, .vigilance-table td {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="vigilance-banner-container">
+    <img src="cyber-security-2.webp" alt="Vigilance at BCCL" class="vigilance-banner-img">
+    <div class="vigilance-banner-title">Vigilance at BCCL</div>
+</div>
+<div class="vigilance-flex-section">
+        <div class="vigilance-section-title">Vigilance Overview</div>
+        <p class="vigilance-text">
+            The Vigilance Department at Bharat Coking Coal Limited (BCCL) is committed to promoting transparency, integrity, and accountability within the organization. Vigilance ensures that all operations are conducted ethically and in compliance with rules and regulations, fostering a culture of honesty and good governance.
+        </p>
+
+        <div class="vigilance-section-title">Functions of Vigilance</div>
+        <ul class="vigilance-list">
+            <li>Preventive, detective, and punitive vigilance activities.</li>
+            <li>Surprise inspections, audits, and system studies to identify and mitigate risks.</li>
+            <li>Processing complaints and conducting investigations into alleged irregularities.</li>
+            <li>Advising management on system improvements to reduce the scope for corruption.</li>
+        </ul>
+
+        <div class="vigilance-section-title">Preventive Vigilance</div>
+        <ul class="vigilance-list">
+            <li>Identification of sensitive areas and processes prone to corruption.</li>
+            <li>Regular review and simplification of procedures to enhance transparency.</li>
+            <li>Training and awareness programs for employees on ethical conduct and anti-corruption measures.</li>
+            <li>Implementation of e-governance and digital monitoring tools.</li>
+        </ul>
+
+        <div class="vigilance-section-title">Complaint Redressal Mechanism</div>
+        <ul class="vigilance-list">
+            <li>Multiple channels for employees and stakeholders to report grievances and unethical practices confidentially.</li>
+            <li>Online complaint portal and dedicated vigilance helpline.</li>
+            <li>Prompt investigation and resolution of complaints.</li>
+            <li>Protection of whistleblowers as per government guidelines.</li>
+        </ul>
+
+        <div class="vigilance-section-title">Vigilance Awareness & Outreach</div>
+        <ul class="vigilance-list">
+            <li>Observance of Vigilance Awareness Week with seminars, workshops, and competitions.</li>
+            <li>Distribution of awareness materials and display of posters across BCCL units.</li>
+            <li>Engagement with schools, colleges, and the public to spread the message of integrity.</li>
+        </ul>
+
+        <div class="vigilance-section-title">Achievements & Initiatives</div>
+        <ul class="vigilance-list">
+            <li>Implementation of online file tracking and e-procurement systems.</li>
+            <li>Reduction in processing time for contracts and payments.</li>
+            <li>Recognition for best practices in vigilance and transparency.</li>
+        </ul>
+
+        <div class="vigilance-section-title">Key Vigilance Statistics (Sample)</div>
+        <table class="vigilance-table">
+            <tr>
+                <th>Parameter</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Complaints Received (Annual)</td>
+                <td>200+</td>
+            </tr>
+            <tr>
+                <td>Surprise Inspections (Annual)</td>
+                <td>100+</td>
+            </tr>
+            <tr>
+                <td>System Improvements Suggested</td>
+                <td>50+</td>
+            </tr>
+            <tr>
+                <td>Vigilance Awareness Programs</td>
+                <td>30+</td>
+            </tr>
+        </table>
+
+        <div class="vigilance-section-title">Vigilance Highlights</div>
+        <ul class="vigilance-list">
+            <li><strong>Transparency:</strong> Ensuring openness in all business processes.</li>
+            <li><strong>Integrity:</strong> Promoting ethical conduct at every level.</li>
+            <li><strong>Accountability:</strong> Holding all employees responsible for their actions.</li>
+            <li><strong>Continuous Improvement:</strong> Regular review and upgradation of vigilance systems.</li>
+        </ul>
+        <p class="vigilance-text" style="margin-top:24px;">
+            Through its vigilance initiatives, BCCL strives to uphold the highest standards of integrity and foster a culture of honesty and accountability across the organization.
+        </p>
+    </div>
+</body>
+</html>

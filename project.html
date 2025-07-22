@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operations | BCCL</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .op-banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+.op-banner-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: fadeInOpBanner 1.2s 0.2s forwards;
+}
+@keyframes fadeInOpBanner {
+    from { opacity: 0; transform: scale(1.05);}
+    to { opacity: 1; transform: scale(1);}
+}
+.op-banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translate(-50%, -70%);}
+    to { opacity: 1; transform: translate(-50%, -50%);}
+}
+        .op-header {
+            text-align: center;
+            color: #0036e6;
+            margin-top: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeSlideDown 1.2s 0.2s forwards;
+        }
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .op-img-center {
+            display: block;
+            margin: 32px auto 24px auto;
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            opacity: 0;
+            animation: fadeInOp 1.2s 0.7s forwards;
+        }
+        .op-flex-section {
+            max-width: 950px;
+            margin: 0 auto 40px auto;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+            opacity: 0;
+            animation: fadeInOp 1.2s 0.9s forwards;
+        }
+        @keyframes fadeInOp {
+            from { opacity: 0; transform: scale(0.97);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .op-section-title {
+            font-size: 1.3rem;
+            color: #0036e6;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .op-text {
+            font-size: 1.1rem;
+            color: #222;
+            text-align: left;
+        }
+        .op-list {
+            margin: 18px 0 0 0;
+            padding-left: 18px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .op-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .op-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #fff;
+        }
+        .op-table th, .op-table td {
+            border: 1px solid #c3d0e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .op-table th {
+            background: #e6f0ff;
+            color: #0036e6;
+        }
+        @media (max-width: 800px) {
+            .op-img-center {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+            }
+            .op-flex-section {
+                padding: 18px 8px 12px 8px;
+            }
+            .op-table th, .op-table td {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="op-banner-container">
+    <img src="operation image.jpg" alt="Operations at BCCL" class="op-banner-img">
+    <div class="op-banner-title">Operations at BCCL</div>
+</div>
+    <div class="op-flex-section">
+        <div class="op-section-title">Operational Overview</div>
+        <p class="op-text">
+            Bharat Coking Coal Limited (BCCL) operates in the Jharia and Raniganj coalfields, the only sources of prime coking coal in India. The company manages a mix of underground and open-cast mines, washeries, and a robust logistics network to ensure efficient coal production and supply.
+        </p>
+
+        <div class="op-section-title">Mining Operations</div>
+        <ul class="op-list">
+            <li><strong>Underground Mines:</strong> BCCL operates several underground mines using conventional and mechanized mining methods.</li>
+            <li><strong>Open-cast Mines:</strong> Large-scale open-cast mining for higher productivity and efficient coal extraction.</li>
+            <li><strong>Mechanization:</strong> Deployment of continuous miners, longwall mining, and other advanced equipment for improved safety and output.</li>
+            <li><strong>Production Planning:</strong> Scientific mine planning and scheduling for optimal resource utilization.</li>
+        </ul>
+
+        <div class="op-section-title">Coal Washeries & Beneficiation</div>
+        <ul class="op-list">
+            <li>8 coal washeries for beneficiation and quality upgradation.</li>
+            <li>Production of washed coking coal with reduced ash content for steel plants.</li>
+            <li>By-products such as middlings and coal fines supplied to power and other industries.</li>
+        </ul>
+
+        <div class="op-section-title">Logistics & Dispatch</div>
+        <ul class="op-list">
+            <li>Integrated rail, road, and conveyor systems for coal transportation.</li>
+            <li>Computerized weighbridges and monitoring for accurate dispatch.</li>
+            <li>Online coal booking and e-auction platforms for transparent sales.</li>
+        </ul>
+
+        <div class="op-section-title">Safety & Environment</div>
+        <ul class="op-list">
+            <li>Strict adherence to safety standards and regular safety audits.</li>
+            <li>Implementation of environmental management plans, land reclamation, and afforestation.</li>
+            <li>Continuous monitoring of air, water, and noise pollution.</li>
+            <li>Community awareness programs on safety and environment.</li>
+        </ul>
+
+        <div class="op-section-title">Key Operational Statistics (Sample)</div>
+        <table class="op-table">
+            <tr>
+                <th>Parameter</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Total Mines</td>
+                <td>36 (Underground & Open-cast)</td>
+            </tr>
+            <tr>
+                <td>Annual Coal Production</td>
+                <td>~30 Million Tonnes</td>
+            </tr>
+            <tr>
+                <td>Number of Washeries</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Coal Dispatch (Annual)</td>
+                <td>~29 Million Tonnes</td>
+            </tr>
+        </table>
+
+        <div class="op-section-title">Operational Highlights</div>
+        <ul class="op-list">
+            <li><strong>Modernization:</strong> Continuous upgradation of mining technology and equipment.</li>
+            <li><strong>Digital Initiatives:</strong> Use of IT and automation for mine planning, monitoring, and safety.</li>
+            <li><strong>Resource Management:</strong> Efficient utilization of manpower, machinery, and reserves.</li>
+            <li><strong>Stakeholder Engagement:</strong> Collaboration with government, industry, and local communities.</li>
+        </ul>
+
+        <p class="op-text" style="margin-top:24px;">
+            BCCL’s operations are focused on sustainable growth, safety, and environmental stewardship, ensuring a reliable supply of quality coking coal to the nation’s core industries.
+        </p>
+    </div>
+</body>
+</html>

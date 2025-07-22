@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCCL Website</title>
+    <!-- Google Fonts for playful typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS for scroll-triggered animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #fff5e6;
+            color: #2d3436;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Loading Page */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e1e2f 0%, #3c3c5e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader img {
+            width: 120px;
+            height: auto;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .loader h2 {
+            font-family: 'Comic Neue', cursive;
+            color: #fff;
+            font-size: 2em;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Particle Animation */
+        .particle-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-100px) scale(0.5);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 159, 67, 0.5)); }
+            50% { filter: drop-shadow(0 0 20px rgba(255, 159, 67, 1)); }
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff9f43 0%, #ff6b6b 100%);
+            opacity: 0.15;
+            z-index: -1;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(rgba(0, 33, 71, 0.7), rgba(0, 33, 71, 0.7)), url('dhanbad-2-jan-2021-entrance-600nw-1885670467 (1).webp') no-repeat center/cover;
+            border-bottom: 5px solid #ff9f43;
+        }
+
+        .hero-content h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            animation: bounceIn 1s ease;
+        }
+
+        .hero-content h2 {
+            font-size: 1.4em;
+            font-weight: 400;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #2d3436;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #ff9f43;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff9f43;
+            transform: translateY(-3px);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2d3436;
+            padding: 12px 16px;
+            display: block;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: #ff9f43;
+            color: #fff;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            font-size: 0.9em;
+            background: #fff;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background: #ff4757;
+            transform: scale(1.05);
+        }
+
+        /* Header Logo */
+        .header-logo {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-logo img {
+            width: 140px;
+            height: auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Card Section */
+        .card-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card-section img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid #ff9f43;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-section img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .mission-vision h3 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.5em;
+            color: #2d3436;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .mission-vision-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .mv-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .mv-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .mv-card h4 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.6em;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .mv-card p {
+            font-size: 1em;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid #ff6b6b;
+        }
+
+        .about-content h5 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2em;
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+
+        .about-content p {
+            font-size: 1em;
+            color: #636e72;
+            line-height: 1.7;
+        }
+
+        /* Icon Section */
+        .icon-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .icon-card {
+            text-align: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .icon-card:hover {
+            transform: scale(1.05);
+        }
+
+        .icon-card a {
+            text-decoration: none;
+            color: #2d3436;
+            display: block;
+        }
+
+        .icon-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-card:hover img {
+            transform: rotate(360deg);
+        }
+
+        .icon-card span {
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* Quick Links */
+        .quick-links-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .quick-links-section h3 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2em;
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+
+        .quick-link {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 8px;
+            background: #ff6b6b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: #ff9f43;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 5px solid #ff9f43;
+        }
+
+        footer a {
+            color: #ff9f43;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6b6b;
+        }
+
+        footer div {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        footer .contact-info,
+        footer .social-links,
+        footer .copyright {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff9f43, transparent);
+            margin: 40px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2em;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2em;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            .navbar a {
+                margin: 5px 10px;
+            }
+
+            .card-section {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-img {
+                max-width: 100%;
+            }
+
+            .icon-section {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .loader h2 {
+                font-size: 1.5em;
+            }
+
+            .loader img {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Loading Page -->
+    <div class="loader" id="loader">
+        <div class="particle-container" id="particle-container"></div>
+        <img src="../../BCCL.jpg" alt="BCCL Logo">
+        <h2>Loading BCCL...</h2>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Bharat Coking Coal Limited</h1>
+            <h2>A Subsidiary of Coal India Limited | Government of India Enterprise</h2>
+        </div>
+    </div>
+
+    <!-- ...existing code... -->
+<nav class="navbar">
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="history.html">History</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Contact Us <i class="fas fa-heart"></i></a>
+            <div class="dropdown-content">
+                <a href="mailto:info@bccl.com"><i class="fas fa-envelope"></i> Email: info@bccl.com</a>
+                <a href="tel:+911234567890"><i class="fas fa-phone"></i> Phone: +91 12345 67890</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Address: Koyla Bhawan, Dhanbad, Jharkhand, India</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">More Info <i class="fas fa-star"></i></a>
+            <div class="dropdown-content">
+                <a href="directors.html">Board of Directors</a>
+                <a href="departments.html">BCCL Departments</a>
+                <a href="careers.html">Careers in BCCL</a>
+                <a href="area.html">Area</a>
+                <a href="notice.html">Notice</a>
+                <a href="policies.html">Policies</a>
+                <a href="login.html">Login</a> <!-- Added Login option here -->
+            </div>
+        </div>
+    </div>
+    <div class="navbar-right">
+        <form class="search-form" action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" placeholder="Search..." name="q">
+            <input type="hidden" name="sitesearch" value="bcclweb.in">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+</nav>
+<!-- ...existing code... -->
+
+    <!-- Header Logo -->
+    <div class="header-logo" style="display:flex;align-items:center;justify-content:center;gap:40px;">
+        <span style="font-size:1.1em;color:#002147;">Committed to Safety & Quality</span>
+        <img src="../../BCCL.jpg" alt="BCCL Logo" style="height:80px;">
+        <span style="font-size:1.1em;color:#002147;">Towards a Greener Tomorrow</span>
+    </div>
+
+    <!-- Card Section -->
+    <div class="card-section">
+        <img src="card/659-BCCL Coal Mine Dhanbad (12).webp" alt="Coal Mine" data-aos="zoom-in">
+        <img src="card/coal.webp" alt="Coal" data-aos="zoom-in" data-aos-delay="100">
+        <img src="card/s_8757f0e9f5df4b9b948450e86640aacd.jpg" alt="Mining" data-aos="zoom-in" data-aos-delay="200">
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="mission-vision">
+        <h3>Our Mission & Vision</h3>
+        <div class="mission-vision-columns">
+            <div class="mv-card" data-aos="fade-up">
+                <div class="mv-icon">🎯</div>
+                <h4>Mission</h4>
+                <p>
+                    To produce and market the planned quantity of coal and coal products efficiently and economically in an eco-friendly manner with due regard to safety, conservation, and quality.
+                </p>
+            </div>
+            <div class="mv-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="mv-icon">🌟</div>
+                <h4>Vision</h4>
+                <p>
+                    To emerge as a global player in the primary energy sector, committed to sustainable development, growth, and excellence.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- About Section -->
+    <div class="about-section">
+        <img class="about-img" src="../../img_cmde_050824.png" alt="About BCCL Photo" data-aos="fade-right">
+        <div class="about-content" data-aos="fade-left">
+            <h5>About Us</h5>
+            <p>
+                Welcome to Bharat Coking Coal Limited, Dhanbad<br><br>
+                BCCL was incorporated in January 1972 to operate coking coal mines in the Jharia & Raniganj Coalfields, taken over by the Government of India on 16th October 1971 to ensure planned development of the scarce coking coal resources in the country. It is a Public Sector Undertaking engaged in mining of coal and allied activities. It occupies an important place as it produces the bulk of the coking coal mined in the country.
+            </p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Icon Section -->
+    <div class="icon-section">
+        <div class="icon-card" data-aos="fade-up">
+            <a href="business.html">
+                <img src="card/business icon1.png" alt="Business" class="icon-img">
+                <span>Business</span>
+            </a>
+        </div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="Human Resources.html">
+                <img src="card/hr icon12.jpg" alt="Human Resources" class="icon-img">
+                <span>Human Resources</span>
+            </a>
+        </div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="200">
+            <a href="operation.html">
+                <img src="card/operation icon1.png" alt="Operations" class="icon-img">
+                <span>Operations</span>
+            </a>
+        </div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="300">
+            <a href="project.html">
+                <img src="card/project icon1.png" alt="Project" class="icon-img">
+                <span>Project</span>
+            </a>
+        </div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="400">
+            <a href="finance.html">
+                <img src="card/finance icon1.png" alt="Finance" class="icon-img">
+                <span>Finance</span>
+            </a>
+        </div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="500">
+            <a href="viglogo-1.html">
+                <img src="card/viglogo-1.png" alt="Vigilance" class="icon-img">
+                <span>Vigilance</span>
+            </a>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Quick Links Section -->
+    <div class="quick-links-section">
+        <h3>Quick Links</h3>
+        <div>
+            <a href="https://www.bcclweb.in/?page_id=5915" target="_blank" class="quick-link">Disclaimer</a>
+            <a href="https://www.bcclweb.in/?page_id=5930" target="_blank" class="quick-link">Privacy Policy</a>
+            <a href="careers.html" class="quick-link">Careers</a>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <div class="contact-info">
+                <strong>Contact:</strong> Koyla Bhawan, Dhanbad, Jharkhand, India | 
+                <a href="mailto:info@bccl.com">info@bccl.com</a> | 
+                <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/BCCLIndia" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a> |
+                <a href="https://www.instagram.com/bcclindia/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
+                <a href="https://www.linkedin.com/company/bccl" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+            <div class="copyright">
+                © 2025 Bharat Coking Coal Limited (BCCL). All Rights Reserved.<br>
+                Website designed and maintained by <a href="https://www.bcclweb.in" target="_blank">BCCL IT Department</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                      row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                      headerRowIndex = 0;
+                    }
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
+
+        // Particle Animation for Loader
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            const particleCount = 30;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 5 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.animationDelay = `${Math.random() * 3}s`;
+                particle.style.background = `hsl(${Math.random() * 60 + 20}, 50%, 80%)`; // Coal-like colors
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialize AOS and Loader
+        window.addEventListener('load', () => {
+            // Initialize AOS after the library is loaded
+            AOS.init({
+                once: true,
+                duration: 1000,
+                easing: 'ease-in-out'
+            });
+
+            // Create particles for loader animation
+            createParticles();
+            
+            // Hide loader after 3 seconds
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - BCCL</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #e3eaf6 0%, #f7f7f7 50%, #cfd9e6 100%);
+      overflow: hidden;
+    }
+    .register-container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,33,71,0.13);
+      padding: 40px 32px 32px 32px;
+      max-width: 370px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInUp 1s cubic-bezier(.77,0,.175,1);
+      position: relative;
+      z-index: 1;
+    }
+    .register-logo {
+      width: 70px;
+      margin-bottom: 18px;
+      animation: bounceIn 1s;
+    }
+    .register-title {
+      font-size: 1.4em;
+      color: #002147;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .register-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .register-form input {
+      padding: 12px 16px;
+      border: 1.5px solid #cfd9e6;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border 0.3s;
+      outline: none;
+    }
+    .register-form input:focus {
+      border: 1.5px solid #0036e6;
+    }
+    .register-btn {
+      padding: 12px 0;
+      background: linear-gradient(90deg, #0036e6 60%, #ff9f43 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,54,230,0.08);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .register-btn:hover {
+      background: linear-gradient(90deg, #002147 60%, #ff6b6b 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .register-links {
+      margin-top: 18px;
+      font-size: 0.98em;
+    }
+    .register-links a {
+      color: #0036e6;
+      text-decoration: underline;
+      margin: 0 8px;
+      transition: color 0.2s;
+    }
+    .register-links a:hover {
+      color: #ff9f43;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.7); opacity: 0;}
+      60% { transform: scale(1.1); opacity: 1;}
+      100% { transform: scale(1);}
+    }
+    /* Animated background circles */
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      background: linear-gradient(120deg, #e3eaf6 0%, #f7f7f7 50%, #cfd9e6 100%);
+      animation: gradientMove 10s ease-in-out infinite alternate;
+      overflow: hidden;
+    }
+    .animated-bg::before, .animated-bg::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .animated-bg::before {
+      width: 400px; height: 400px;
+      left: 10vw; top: 10vh;
+      background: #002147;
+      animation: float1 12s ease-in-out infinite alternate;
+    }
+    .animated-bg::after {
+      width: 300px; height: 300px;
+      right: 8vw; bottom: 12vh;
+      background: #0036e6;
+      animation: float2 14s ease-in-out infinite alternate;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    @keyframes float1 {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-40px) scale(1.1); }
+    }
+    @keyframes float2 {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(40px) scale(1.05); }
+    }
+    @media (max-width: 500px) {
+      .register-container { padding: 24px 8px 18px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-bg"></div>
+  <div class="register-container">
+    <img src="../../BCCL_LOGO-6.jpeg" alt="BCCL Logo" class="register-logo">
+    <div class="register-title">Create Your BCCL Account</div>
+    <form class="register-form" autocomplete="off" onsubmit="showRegisterMsg(event)">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit" class="register-btn">Register</button>
+    </form>
+    <div class="register-links">
+      <a href="login.html">Already have an account? Login</a>
+    </div>
+    <div id="register-msg" style="margin-top:18px;color:#0036e6;font-weight:500;display:none;">
+      Registration successful! (This is a demo. Connect to backend for real registration.)
+    </div>
+  </div>
+  <script>
+    function showRegisterMsg(e) {
+      e.preventDefault();
+      document.getElementById('register-msg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
